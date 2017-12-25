@@ -78,27 +78,53 @@ For details about how I created the training data, see the next section.
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was not to reinvent the wheel but to implement something that was proven to work and adapt it for my own application.
 
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...
+My first step was to use a convolution neural network model similar to the one developed by the autonomous vehicle team in NVidia since it was both recommended by the course material and proven to work in the real world.
 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
 
-To combat the overfitting, I modified the model so that ...
+To combat the overfitting, I modified the model so that it contained a dropout layer.  
 
-Then I ... 
+Then I created extra data to generalize my model and make it less specific to the test track.  This includes recording the driving data when driving in both directions on the test track and also augmenting the recorded data by flipping all of the images vertically thus doubling the amount of data available to train the model. 
 
-The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
+The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track (especially during cornering). To improve the driving behavior in these cases, I recorded extra driving data.  I also found that by driving slower and decreasing the image quality of the simulator (both resolution and speed) I was able to collect more accurate driving data.  This helped in the process of training the model to drive more accurately.
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
 #### 2. Final Model Architecture
 
-The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+The final model architecture (clone.py lines 62-78) consisted of a convolution neural network with the following layers and layer sizes:
 
-Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
+1. Convolution (24 layers, 5 x 5 filter, ELU activation)
+2. Convolution (36 layers, 5 x 5 filter)
+3. Convolution (48 layers, 5 x 5 filter)
+4. Convolution (64 layers, 5 x 5 filter)
+4. Convolution (64 layers, 3 x 3 filter)
+4. 
 
-![alt text][image1]
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 160x320x3 RGB image   							| 
+| Convolution 5x5 (L1) 	| 24 filters 	|
+| ELU	|												|
+| Convolution 5x5 (L2) 	| 36 filters 	|
+| ELU	|												|
+| Convolution 5x5 (L3) 	| 48 filters 	|
+| ELU	|	
+| Convolution 5x5 (L4) 	| 64 filters 	|
+| ELU	|							
+| Convolution 3x3 (L5) 	| 64 filters 	|
+| ELU	& Dropout |										|			
+| Flatten			  |    								|
+| Fully connected (L6)	| Outputs 100  		|
+| ELU	| 												|
+| Fully connected (L7)	| Outputs 50  		|
+| ELU	| 												|
+| Fully connected (L8)	| Outputs 10  		|
+| ELU	| 												|
+| Fully connected (L9)	| Outputs 1   		|
+| ELU	| 												|
 
 #### 3. Creation of the Training Set & Training Process
 
