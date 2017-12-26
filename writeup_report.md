@@ -96,13 +96,6 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (clone.py lines 62-78) consisted of a convolution neural network with the following layers and layer sizes:
 
-1. Convolution (24 layers, 5 x 5 filter, ELU activation)
-2. Convolution (36 layers, 5 x 5 filter)
-3. Convolution (48 layers, 5 x 5 filter)
-4. Convolution (64 layers, 5 x 5 filter)
-4. Convolution (64 layers, 3 x 3 filter)
-4. 
-
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 160x320x3 RGB image   							| 
