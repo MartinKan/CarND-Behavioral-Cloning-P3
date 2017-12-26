@@ -119,7 +119,6 @@ The final model architecture (clone.py lines 62-78) consisted of a convolution n
 | Fully connected (L8)	| Outputs 10  		|
 | ELU	| 												|
 | Fully connected (L9)	| Outputs 1   		|
-| ELU	| 												|
 
 #### 3. Creation of the Training Set & Training Process
 
