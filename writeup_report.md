@@ -127,27 +127,30 @@ To capture good driving behavior, I first recorded two laps on track one using c
 
 ![alt text][image1]
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to get back on the track by itself. These images show what a recovery looks like starting from the right side of the road:
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to get back on the track by itself. These images show what a recovery looks like starting from the left side of the road:
 
 ![alt text][image2]
 ![alt text][image3]
 ![alt text][image4]
 
-These images show what a recovery looks like starting from the left side of the road:
+These images show what a recovery looks like starting from the right side of the road:
 
 ![alt text][image5]
 ![alt text][image6]
 ![alt text][image7]
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data sat, I also flipped images and angles thinking that this would help to generalize the model. For example, here is an image that has then been flipped:
 
 ![Original Image][image8]
+
 *Original Image*
+
 ![Flipped Image][image9]
+
 *Flipped Image*
 
-After the collection process, I had X number of data points. I then preprocessed this data by normalizing ....
+After the collection process, I had 27,873 number of data points (excluding the augmented images). I then preprocessed this data by converting them from the BGR colorspace to the RGB colorspace, normalize all of the pixel values and center them around 0 and crop out the top and bottom part of the images that do not show the road and are irrelevant to the training process.
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 2-5 as evidenced by my trial and error testing process. I used an adam optimizer so that manually training the learning rate wasn't necessary.
