@@ -141,8 +141,10 @@ These images show what a recovery looks like starting from the left side of the 
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-![alt text][image8]
-![alt text][image9]
+![Original Image][image8]
+*Original Image*
+![Flipped Image][image9]
+*Flipped Image*
 
 After the collection process, I had X number of data points. I then preprocessed this data by normalizing ....
 
