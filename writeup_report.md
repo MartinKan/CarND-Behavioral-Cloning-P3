@@ -16,13 +16,15 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
+[image1]: ./sample_images/Center_Driving_Example.jpg "Center Driving Example"
+[image2]: ./sample_images/Recovery_Left_Side_1.jpg "Recovery Left Side 1"
+[image3]: ./sample_images/Recovery_Left_Side_2.jpg "Recovery Left Side 2"
+[image4]: ./sample_images/Recovery_Left_Side_3.jpg "Recovery Left Side 3"
+[image5]: ./sample_images/Recovery_Right_Side_1.jpg "Recovery Right Side 1"
+[image6]: ./sample_images/Recovery_Right_Side_2.jpg "Recovery Right Side 2"
+[image7]: ./sample_images/Recovery_Right_Side_3.jpg "Recovery Right Side 3"
+[image8]: ./sample_images/Augmented_1.jpg "Augmented 1"
+[image9]: ./sample_images/Augmented_2.jpg "Augmented 2"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -123,25 +125,26 @@ The final model architecture (clone.py lines 62-78) consisted of a convolution n
 
 To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
 
+![alt text][image1]
+
+I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to get back on the track by itself. These images show what a recovery looks like starting from the right side of the road:
+
 ![alt text][image2]
-
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
-
 ![alt text][image3]
 ![alt text][image4]
+
+These images show what a recovery looks like starting from the left side of the road:
+
 ![alt text][image5]
-
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
 ![alt text][image6]
 ![alt text][image7]
 
-Etc ....
+To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
+![alt text][image8]
+![alt text][image9]
 
+After the collection process, I had X number of data points. I then preprocessed this data by normalizing ....
 
 I finally randomly shuffled the data set and put Y% of the data into a validation set. 
 
